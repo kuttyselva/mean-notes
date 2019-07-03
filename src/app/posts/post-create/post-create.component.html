@@ -1,0 +1,17 @@
+<mat-card>
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+      <mat-form-field>
+          <input matInput #title="ngModel" required minlength="3" placeholder="Title Here" type="text" ngModel name="title" id="">
+          <mat-error *ngIf="title.invalid">Please Enter Title</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput #content="ngModel" required placeholder="Content Here" ngModel type="text" name="content" >
+          <mat-error *ngIf="content.invalid">Please Enter Content</mat-error>
+
+        </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">SavePost</button>
+      
+  </form>
+</mat-card>
+
+
